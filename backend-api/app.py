@@ -38,6 +38,7 @@ def get_token():
     data = request.get_json()
     if 'device_guid' not in data:
         return jsonify({"error": "Missing device_guid"}), 400    
+    
     #Get the client IP
     client_ip = request.remote_addr
     
@@ -64,9 +65,9 @@ def get_token():
             )
             return jsonify({"message": "Valid attempt to get token detected", "token": token}), 200 # Returns the client the valid token
         else:
-            return jsonify({"message": "Failed attempt to get token detected"}), 400
+            return jsonify({"message": "Malicious attempt to get token"}), 400
     except Exception as e:
-        return jsonify({"error": f"Decryption failed: {str(e)}"}), 400
+        return jsonify({"error": "Server Side Isssue | Report to admin"}), 400
 
 
 # Token validation function

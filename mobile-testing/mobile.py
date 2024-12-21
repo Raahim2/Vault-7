@@ -84,12 +84,12 @@ def main():
         if choice == '1':
             url = input("Enter the base URL (e.g., https://yourvercelwebsite.com): ")
             check_health_url = url + '/check_health'
-            get_token_url = url + '/get_token'
+            get_token_url = url + '/get_token_for_message'
             simulate_getting_token(check_health_url, get_token_url)
         elif choice == '2':
             url = input("Enter the base URL (e.g., https://yourvercelwebsite.com): ")
             check_health_url = url + '/check_health'
-            get_token_url = url + '/get_token'
+            get_token_url = url + '/get_token_for_message'
             simulate_getting_token_with_custom_guid(check_health_url, get_token_url)
         elif choice == '3':
             token = input("Enter the token for your request: ")
